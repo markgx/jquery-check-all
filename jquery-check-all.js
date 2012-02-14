@@ -1,5 +1,6 @@
 /*
   https://github.com/markgx/jquery-check-all
+
   Copyright (c) 2012 Mark Guerra <markgx@gmail.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -13,7 +14,7 @@
   var pluginName = 'checkAll';
   var defaults = {
     container: document,
-    childrenSelector: 'input[type=checkbox]'
+    childCheckboxes: 'input[type=checkbox]'
   };
 
   function checkAll(element, options) {
@@ -22,17 +23,17 @@
     this.init();
   }
 
-  checkAll.prototype.init = function () {
+  checkAll.prototype.init = function() {
     this._checkChildren();
 
     var plugin = this;
 
     this.$el.on('click', function(e) {
-      var $children = $(plugin.options.childrenSelector, plugin.options.container).not(plugin.$el);
+      var $children = $(plugin.options.childCheckboxes, plugin.options.container).not(plugin.$el);
       $children.prop('checked', $(this).prop('checked'));
     });
 
-    $(this.options.container).on('click', plugin.options.childrenSelector, function(e) {
+    $(this.options.container).on('click', plugin.options.childCheckboxes, function(e) {
       plugin._checkChildren();
     });
   };
@@ -48,8 +49,8 @@
   }
 
   checkAll.prototype._checkChildren = function() {
-    var totalCount = $(this.options.childrenSelector, this.options.container).not(this.$el).length;
-    var checkedCount = $(this.options.childrenSelector + ':checked', this.options.container).not(this.$el).length;
+    var totalCount = $(this.options.childCheckboxes, this.options.container).not(this.$el).length;
+    var checkedCount = $(this.options.childCheckboxes + ':checked', this.options.container).not(this.$el).length;
     this.$el.prop('checked', checkedCount == totalCount);
   }
 })(jQuery, window, document);
