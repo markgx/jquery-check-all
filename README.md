@@ -28,6 +28,7 @@ $('#check-all-box').checkAll(options);
 ```
 
 Available options:
+
 - container: A selector string or jQuery object of the element which contains the children checkboxes. Defaults to `document`.
 - childCheckboxes: A selector string or jQuery object of the children checkboxes. Defaults to `input[type=checkbox]`.
 
