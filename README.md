@@ -5,7 +5,7 @@ https://github.com/blueimp/jQuery-File-Upload
 Quickly add check all/uncheck all functionality to your forms or tables.
 
 ## Setup
-Include the script in your <head> tag. Call the $('#your-all-checkbox').checkAll() function to initialize the plugin.
+Include the script in your `<head>` tag. Call the `$('#your-all-checkbox').checkAll()` function to initialize the plugin.
 
 ```
 <head>
