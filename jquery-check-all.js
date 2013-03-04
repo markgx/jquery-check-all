@@ -50,8 +50,7 @@
 
   checkAll.prototype._checkChildren = function() {
     var totalCount = $(this.options.childCheckboxes, this.options.container).not(this.$el).length;
-    var checkedCount = $(this.options.childCheckboxes + ':checked', this.options.container).not(this.$el).length;
+    var checkedCount = $(this.options.childCheckboxes, this.options.container).filter(':checked').not(this.$el).length;
     this.$el.prop('checked', checkedCount == totalCount);
   }
 })(jQuery, window, document);
-
