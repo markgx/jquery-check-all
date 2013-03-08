@@ -12,14 +12,14 @@ Source is available on [GitHub](https://github.com/markgx/jquery-check-all).
 
 Include jQuery and the script somewhere on your page.
 
-```
+```html
 <script src="jquery.js"></script>
 <script src="jquery-check-all.js"></script>
 ```
 
 You'll have markup which contains your checkboxes, for example:
 
-```
+```html
 <table>
   <thead>
     <tr>
@@ -46,7 +46,7 @@ You'll have markup which contains your checkboxes, for example:
 
 Call the `checkAll()` function on your "check all" checkbox to initialize the plugin.
 
-```
+```html
 <script>
   $(document).ready(function() {
     $('#check-all').checkAll();
@@ -58,7 +58,7 @@ Call the `checkAll()` function on your "check all" checkbox to initialize the pl
 
 The plugin can be supplied with an options object to further filter which checkboxes you want to group.
 
-```
+```js
 var options = { container: $('#table') };
 $('#check-all-box').checkAll(options);
 ```
