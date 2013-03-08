@@ -28,12 +28,12 @@
 
     var plugin = this;
 
-    this.$el.on('click', function(e) {
+    this.$el.on('change', function(e) {
       var $children = $(plugin.options.childCheckboxes, plugin.options.container).not(plugin.$el);
       $children.prop('checked', $(this).prop('checked'));
     });
 
-    $(this.options.container).on('click', plugin.options.childCheckboxes, function(e) {
+    $(this.options.container).on('change', plugin.options.childCheckboxes, function(e) {
       plugin._checkChildren();
     });
   };
