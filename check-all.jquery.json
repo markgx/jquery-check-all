@@ -1,0 +1,24 @@
+{
+  "name": "check-all",
+  "title": "jQuery Check All",
+  "version": "0.3.0",
+  "description": "Quickly add check all/uncheck all functionality to your forms or tables.",
+  "keywords": [ "checkbox", "check", "uncheck", "all" ],
+  "author": {
+    "name": "Mark Guerra",
+    "email": "markgx@gmail.com",
+    "url": "http://markgx.net"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "bugs": "https://github.com/markgx/jquery-check-all/issues",
+  "homepage": "http://markgx.net/jquery-check-all",
+  "docs": "http://markgx.net/jquery-check-all",
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
+}
