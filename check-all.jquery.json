@@ -1,7 +1,7 @@
 {
   "name": "check-all",
   "title": "jQuery Check All",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Quickly add check all/uncheck all functionality to your forms or tables.",
   "keywords": [ "checkbox", "check", "uncheck", "all" ],
   "author": {
