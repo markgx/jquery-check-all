@@ -40,3 +40,17 @@ test('check all box checks/unchecks when children are selected/deselected', func
   $('#child2').trigger('click');
   equal(false, $('#all').is(':checked'));
 });
+
+test('indeterminate state is correctly set/unset', function() {
+  $('#all').checkAll({ container: $('#group1'), showIndeterminate: true });
+
+  equal(false, $('#all').prop('indeterminate'));
+  $('#child1').trigger('click');
+  equal(true, $('#all').prop('indeterminate'));
+  $('#child2').trigger('click');
+  equal(false, $('#all').prop('indeterminate'));
+  $('#child2').trigger('click');
+  equal(true, $('#all').prop('indeterminate'));
+  $('#child1').trigger('click');
+  equal(false, $('#all').prop('indeterminate'));
+});

@@ -12,9 +12,11 @@
 
 ;(function ($, window, document) {
   var pluginName = 'checkAll';
+
   var defaults = {
     container: document,
-    childCheckboxes: 'input[type=checkbox]'
+    childCheckboxes: 'input[type=checkbox]',
+    showIndeterminate: false
   };
 
   function checkAll(element, options) {
@@ -50,7 +52,13 @@
 
   checkAll.prototype._checkChildren = function() {
     var totalCount = $(this.options.childCheckboxes, this.options.container).not(this.$el).length;
-    var checkedCount = $(this.options.childCheckboxes, this.options.container).filter(':checked').not(this.$el).length;
-    this.$el.prop('checked', checkedCount == totalCount);
+    var checkedCount = $(this.options.childCheckboxes,this.options.container)
+      .filter(':checked').not(this.$el).length;
+
+    var indeterminate = this.options.showIndeterminate &&
+      checkedCount > 0 && checkedCount < totalCount;
+
+    this.$el.prop('indeterminate', indeterminate);
+    this.$el.prop('checked', checkedCount === totalCount);
   }
 })(jQuery, window, document);

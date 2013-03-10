@@ -59,7 +59,7 @@ Call the `checkAll()` function on your "check all" checkbox to initialize the pl
 The plugin can be supplied with an options object to further filter which checkboxes you want to group.
 
 ```js
-var options = { container: $('#table') };
+var options = { container: $('#table'), showIndeterminate: true };
 $('#check-all-box').checkAll(options);
 ```
 
@@ -67,6 +67,7 @@ Available options:
 
 - container: A selector string or jQuery object of the element which contains the children checkboxes. Defaults to `document`.
 - childCheckboxes: A selector string or jQuery object of the children checkboxes. Defaults to `input[type=checkbox]`. _Note_: if you supply this option, make sure what you're passing are checkboxes.
+- showIndeterminate: a boolean which specifies whether to display the check all checkbox in the indeterminate state if a subset of the children checkboxes are selected.
 
 ## Requirements
 
