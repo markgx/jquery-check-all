@@ -1,6 +1,6 @@
 # jQuery Check All
 
-http://markgx.net/jquery-check-all
+http://markgx.github.io/jquery-check-all
 
 A jQuery plugin which allows you to quickly add check all/uncheck all functionality to your forms or tables.
 
@@ -71,7 +71,7 @@ Available options:
 
 ## Requirements
 
-- jQuery 1.7+
+- jQuery 1.7+/2.0+
 
 ## License
 
