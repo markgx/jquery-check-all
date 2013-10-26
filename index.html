@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>jQuery Check All</title>
+  <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="container-narrow">
+    <header>
+      <div class="row-fluid">
+        <div class="span12">
+          <div id="main-header">jQuery Check All</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="row-fluid content">
+      <div class="span12">
+<p>A jQuery plugin which allows you to quickly add check all/uncheck all functionality to your forms or tables.</p>
+
+<h2>Demo</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    <table id="the-table" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th><input id="check-all" type="checkbox"></th>
+          <th><em>&lt; check all here</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Bender</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Fry</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Dr. Zoidberg</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>Professor Farnsworth</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Download / Fork</h2>
+
+<p>Download the latest release v.0.4.0 (<a href="https://github.com/markgx/jquery-check-all/archive/0.4.0.tar.gz">tar.gz</a>) (<a href="https://github.com/markgx/jquery-check-all/archive/0.4.0.zip">zip</a>). Source is also available on <a href="https://github.com/markgx/jquery-check-all">GitHub</a>.</p>
+
+<h2>Setup</h2>
+
+<p>Include jQuery and the script somewhere on your page.</p>
+<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;jquery-check-all.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre>
+<p>You&rsquo;ll have markup which contains your checkboxes, for example:</p>
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">id=</span><span class="s">&quot;check-all&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>option 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>option 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>option 3<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre>
+<p>Call the <code>checkAll()</code> function on your &ldquo;check all&rdquo; checkbox to initialize the plugin.</p>
+<pre class="highlight html"><span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#check-all&#39;</span><span class="p">).</span><span class="nx">checkAll</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre>
+<h2>Options</h2>
+
+<p>The plugin can be supplied with an options object to further filter which checkboxes you want to group.</p>
+<pre class="highlight javascript"><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="na">container</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#table&#39;</span><span class="p">),</span> <span class="na">showIndeterminate</span><span class="p">:</span> <span class="kc">true</span> <span class="p">};</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#check-all-box&#39;</span><span class="p">).</span><span class="nx">checkAll</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</pre>
+<p>Available options:</p>
+
+<ul>
+<li>container: A selector string or jQuery object of the element which contains the children checkboxes. Defaults to <code>document</code>.</li>
+<li>childCheckboxes: A selector string or jQuery object of the children checkboxes. Defaults to <code>input[type=checkbox]</code>. <em>Note</em>: if you supply this option, make sure what you&rsquo;re passing are checkboxes.</li>
+<li>showIndeterminate: a boolean which specifies whether to display the check all checkbox in the indeterminate state if a subset of the children checkboxes are selected.</li>
+</ul>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>jQuery 1.7+</li>
+</ul>
+
+<h2>License</h2>
+
+<p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT License</a>.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="jquery-check-all.js"></script>
+
+  <script>
+    $('#check-all').checkAll({ showIndeterminate: true });
+  </script>
+</body>
+</html>
