@@ -59,6 +59,7 @@
       checkedCount > 0 && checkedCount < totalCount;
 
     this.$el.prop('indeterminate', indeterminate);
-    this.$el.prop('checked', checkedCount === totalCount);
+    this.$el.prop('checked', checkedCount === totalCount && totalCount !== 0);
   }
+
 })(jQuery, window, document);
