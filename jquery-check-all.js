@@ -21,7 +21,7 @@
 
   function checkAll(element, options) {
     this.$el = $(element);
-    this.options = $.extend({}, defaults, options) ;
+    this.options = $.extend({}, defaults, this.$el.data(), options) ;
     this.init();
   }
 
