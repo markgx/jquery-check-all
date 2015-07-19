@@ -59,7 +59,7 @@
 
 <h2>Download / Fork</h2>
 
-<p>Download the latest release v.0.4.0 (<a href="https://github.com/markgx/jquery-check-all/archive/0.4.0.tar.gz">tar.gz</a>) (<a href="https://github.com/markgx/jquery-check-all/archive/0.4.0.zip">zip</a>). Source is also available on <a href="https://github.com/markgx/jquery-check-all">GitHub</a>.</p>
+<p>Download the latest release v.0.5.0 (<a href="https://github.com/markgx/jquery-check-all/archive/0.5.0.tar.gz">tar.gz</a>) (<a href="https://github.com/markgx/jquery-check-all/archive/0.5.0.zip">zip</a>). Source is also available on <a href="https://github.com/markgx/jquery-check-all">GitHub</a>.</p>
 
 <h2>Setup</h2>
 
@@ -103,6 +103,9 @@
 <p>The plugin can be supplied with an options object to further filter which checkboxes you want to group.</p>
 <pre class="highlight javascript"><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="na">container</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#table&#39;</span><span class="p">),</span> <span class="na">showIndeterminate</span><span class="p">:</span> <span class="kc">true</span> <span class="p">};</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#check-all-box&#39;</span><span class="p">).</span><span class="nx">checkAll</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</pre>
+<p>Alternatively, options may be supplied via data attributes. Note that options passed via the options object will override any options specified via data attributes.</p>
+<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;check-all&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">data-show-indeterminate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
 </pre>
 <p>Available options:</p>
 
