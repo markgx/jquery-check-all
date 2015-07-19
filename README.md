@@ -63,6 +63,12 @@ var options = { container: $('#table'), showIndeterminate: true };
 $('#check-all-box').checkAll(options);
 ```
 
+Alternatively, options may be supplied via data attributes. Note that options passed via the options object will override any options specified via data attributes.
+
+```html
+<input id="check-all" type="checkbox" data-show-indeterminate="true">
+```
+
 Available options:
 
 - container: A selector string or jQuery object of the element which contains the children checkboxes. Defaults to `document`.
