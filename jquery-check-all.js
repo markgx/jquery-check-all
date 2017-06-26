@@ -10,6 +10,7 @@
   function checkAll(element, options) {
     this.$el = $(element);
     this.options = $.extend({}, defaults, this.$el.data(), options) ;
+    if ($.isFunction(this.options.container)) this.options.container = this.options.container.call(element); // support callback
     this.init();
   }
 
