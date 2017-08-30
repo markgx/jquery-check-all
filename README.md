@@ -50,6 +50,8 @@ Call the `checkAll()` function on your "check all" checkbox to initialize the pl
 <script>
   $(document).ready(function() {
     $('#check-all').checkAll();
+    //here you can get what you've checked  id,id,id,...
+    var ids = $('#check-all').data('plugin_checkAll').values();
   });
 </script>
 ```
